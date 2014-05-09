@@ -1,4 +1,6 @@
-linux-staging-dev
-=================
+linux staging development
+-------------------------
 
-linux kernel staging development
+Author: Raghavendra Chandra Ganiga <ravi23ganiga@gmail.com>
+
+1. new line problem solved in comedi_fops.c

@@ -1,0 +1,36 @@
+From 0f193f423ee84cb83b83b1e777cbcf18b92bebe6 Mon Sep 17 00:00:00 2001
+From: Raghavendra Ganiga <ravi23ganiga@gmail.com>
+Date: Thu, 1 May 2014 13:48:01 +0530
+Subject: [PATCH] staging: comedi: fix coding style issues in comedi_fops.c
+
+This is a patch to fix coding style
+warnings found by checkpatch.pl tool
+
+Signed-off-by: Raghavendra Chandra Ganiga <ravi23ganiga@gmail.com>
+---
+ drivers/staging/comedi/comedi_fops.c |    2 ++
+ 1 file changed, 2 insertions(+)
+
+diff --git a/drivers/staging/comedi/comedi_fops.c b/drivers/staging/comedi/comedi_fops.c
+index 70545e6..b24bf9b 100644
+--- a/drivers/staging/comedi/comedi_fops.c
++++ b/drivers/staging/comedi/comedi_fops.c
+@@ -668,6 +668,7 @@ static int do_devconfig_ioctl(struct comedi_device *dev,
+ 			return -EBUSY;
+ 		if (dev->attached) {
+ 			struct module *driver_module = dev->driver->module;
++
+ 			comedi_device_detach(dev);
+ 			module_put(driver_module);
+ 		}
+@@ -2653,6 +2654,7 @@ static int __init comedi_init(void)
+ 	/* create devices files for legacy/manual use */
+ 	for (i = 0; i < comedi_num_legacy_minors; i++) {
+ 		struct comedi_device *dev;
++
+ 		dev = comedi_alloc_board_minor(NULL);
+ 		if (IS_ERR(dev)) {
+ 			comedi_cleanup_board_minors();
+-- 
+1.7.10.4
+
